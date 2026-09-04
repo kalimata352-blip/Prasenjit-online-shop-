@@ -1,4 +1,4 @@
-# Prasenjit-online-shop-
+Prasenjit-online-shop-
 This web development process, program, project work etc 
 # Prasenjit Online Shop
 
@@ -36,9 +36,4 @@ A simple, responsive e-commerce web application. This project is for web develop
    npm start
 
 ## Future Plan
-- Payment gateway integration
-- Order tracking
-- Wishlist & reviews
-
-## Author
-Prasenjit Mondal - Web Developer
+- Payment gateway integr
