@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>প্রসেনজিৎ অনলাইন শপ</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  background: #087830;
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.cart-count {
+  background: white;
+  color: #087830;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: linear-gradient(135deg, #087830, #11a94d);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.hero h1 {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero button {
+  background: white;
+  color: #087830;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  border: none;
+  background: #087830;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.search-section input {
+  width: 90%;
+  max-width: 600px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 170px;
+  background: #eeeeee;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  margin-bottom: 8px;
+}
+
+.product-card p {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.price {
+  color: #087830;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-section {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* =========================
+   ORDER FORM
+========================= */
+
+.order-section {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.order-section input,
+.order-section textarea,
+.order-section select {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.order-section textarea {
+  min-height: 100px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  margin-top: 30px;
+}
+
+.contact p {
+  margin: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 600px) {
+
+  .header-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="header-container">
+
+<div class="logo">
+🛒 প্রসেনজিৎ অনলাইন শপ
+</div>
+
+<nav>
+<a href="#home">হোম</a>
+<a href="#products">পণ্য</a>
+<a href="#cart">কার্ট</a>
+<a href="#order">অর্ডার</a>
+<a href="#contact">যোগাযোগ</a>
+
+<span class="cart-count">
+🛒 <span id="cartCount">0</span>
+</span>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<h1>প্রসেনজিৎ অনলাইন শপে স্বাগতম</h1>
+
+<p>
+আপনার দৈনন্দিন প্রয়োজনীয় পণ্য এখন অনলাইনে অর্ডার করুন।
+</p>
+
+<button onclick="showProducts()">
+পণ্য দেখুন
+</button>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-section">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 পণ্য খুঁজুন..."
+onkeyup="searchProduct()"
+>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+class="products-section"
+id="products"
+>
+
+<h2 class="section-title">
+আমাদের পণ্যসমূহ
+</h2>
+
+<div
+class="product-container"
+id="productContainer"
+>
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card">
+
+<div class="product-image">
+🛢️
+</div>
+
+<h3>সরিষার তেল</h3>
+
+<p>১ লিটার</p>
+
+<div class="price">
+₹150
+</div>
+
+<button
+onclick="addToCart('সরিষার তেল',150)"
+>
+কার্টে যোগ করুন
+</button>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card">
+
+<div class="product-image">
+🍚
+</div>
+
+<h3>চিনি</h3>
+
+<p>১ কেজি</p>
+
+<div class="price">
+₹50
+</div>
+
+<button
+onclick="addToCart('চিনি',50)"
+>
+কার্টে যোগ করুন
+</button>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card">
+
+<div class="product-image">
+🧂
+</div>
+
+<h3>নুন</h3>
+
+<p>১ কেজি</p>
+
+<div class="price">
+₹30
+</div>
+
+<button
+onclick="addToCart('নুন',30)"
+>
+কার্টে যোগ করুন
+</button>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card">
+
+<div class="product-image">
+🌾
+</div>
+
+<h3>চাল</h3>
+
+<p>৫ কেজি</p>
+
+<div class="price">
+₹300
+</div>
+
+<button
+onclick="addToCart('চাল',300)"
+>
+কার্টে যোগ করুন
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<section
+class="cart-section"
+id="cart"
+>
+
+<h2 class="section-title">
+🛒 আপনার শপিং কার্ট
+</h2>
+
+<div id="cartItems">
+
+<p>
+আপনার কার্ট খালি আছে।
+</p>
+
+</div>
+
+<div class="cart-total">
+
+মোট টাকা:
+₹ <span id="totalPrice">0</span>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ORDER FORM
+========================= -->
+
+<section
+class="order-section"
+id="order"
+>
+
+<h2 class="section-title">
+📦 অর্ডার করুন
+</h2>
+
+<form
+id="orderForm"
+onsubmit="placeOrder(event)"
+>
+
+<label>
+আপনার নাম
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="আপনার সম্পূর্ণ নাম লিখুন"
+required
+>
+
+
+<label>
+মোবাইল নম্বর
+</label>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="10 সংখ্যার মোবাইল নম্বর"
+required
+>
+
+
+<label>
+সম্পূর্ণ ঠিকানা
+</label>
+
+<textarea
+id="customerAddress"
+placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন"
+required
+></textarea>
+
+
+<label>
+পেমেন্ট পদ্ধতি
+</label>
+
+<select id="paymentMethod">
+
+<option value="Cash on Delivery">
+Cash on Delivery
+</option>
+
+<option value="UPI">
+UPI Payment
+</option>
+
+</select>
+
+
+<button type="submit">
+অর্ডার নিশ্চিত করুন
+</button>
+
+</form>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact"
+id="contact"
+>
+
+<h2>
+যোগাযোগ করুন
+</h2>
+
+<p>
+🏪 প্রসেনজিৎ অনলাইন শপ
+</p>
+
+<p>
+📱 অনলাইনে অর্ডার করুন
+</p>
+
+<p>
+📍 আপনার প্রয়োজনীয় পণ্য সহজে কিনুন
+</p>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+© 2026 প্রসেনজিৎ অনলাইন শপ
+</p>
+
+<p>
+Developed by Prasenjit Mondal
+</p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   CART ARRAY
+========================= */
+
+let cart = [];
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addToCart(name, price) {
+
+  let existingItem =
+  cart.find(function(item) {
+
+    return item.name === name;
+
+  });
+
+
+  if(existingItem) {
+
+    existingItem.quantity++;
+
+  }
+
+  else {
+
+    cart.push({
+
+      name: name,
+
+      price: price,
+
+      quantity: 1
+
+    });
+
+  }
+
+
+  updateCart();
+
+
+  alert(
+    name +
+    " কার্টে যোগ করা হয়েছে!"
+  );
+
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart() {
+
+  let cartItems =
+  document.getElementById(
+    "cartItems"
+  );
+
+
+  let totalPrice =
+  document.getElementById(
+    "totalPrice"
+  );
+
+
+  let cartCount =
+  document.getElementById(
+    "cartCount"
+  );
+
+
+  cartItems.innerHTML = "";
+
+
+  let total = 0;
+
+  let totalItems = 0;
+
+
+  if(cart.length === 0) {
+
+    cartItems.innerHTML =
+    "<p>আপনার কার্ট খালি আছে।</p>";
+
+  }
+
+
+  cart.forEach(
+  function(item, index) {
+
+    let itemTotal =
+    item.price *
+    item.quantity;
+
+
+    total =
+    total +
+    itemTotal;
+
+
+    totalItems =
+    totalItems +
+    item.quantity;
+
+
+    let itemElement =
+    document.createElement("div");
+
+
+    itemElement.className =
+    "cart-item";
+
+
+    itemElement.innerHTML =
+
+    "<div>" +
+
+    item.name +
+
+    " × " +
+
+    item.quantity +
+
+    "</div>" +
+
+    "<div>" +
+
+    "₹" +
+
+    itemTotal +
+
+    " " +
+
+    "<button onclick='removeItem(" +
+
+    index +
+
+    ")'>" +
+
+    "❌" +
+
+    "</button>" +
+
+    "</div>";
+
+
+    cartItems.appendChild(
+      itemElement
+    );
+
+  });
+
+
+  totalPrice.innerText =
+  total;
+
+
+  cartCount.innerText =
+  totalItems;
+
+}
+
+
+/* =========================
+   REMOVE ITEM
+========================= */
+
+function removeItem(index) {
+
+  cart.splice(index, 1);
+
+  updateCart();
+
+}
+
+
+/* =========================
+   SEARCH PRODUCT
+========================= */
+
+function searchProduct() {
+
+  let input =
+  document
+  .getElementById(
+    "searchInput"
+  )
+  .value
+  .toLowerCase();
+
+
+  let products =
+  document.querySelectorAll(
+    ".product-card"
+  );
+
+
+  products.forEach(
+  function(product) {
+
+    let productName =
+    product
+    .querySelector("h3")
+    .innerText
+    .toLowerCase();
+
+
+    if(
+      productName.includes(
+        input
+      )
+    ) {
+
+      product.style.display =
+      "block";
+
+    }
+
+    else {
+
+      product.style.display =
+      "none";
+
+    }
+
+  });
+
+}
+
+
+/* =========================
+   SHOW PRODUCTS
+========================= */
+
+function showProducts() {
+
+  document
+  .getElementById(
+    "products"
+  )
+  .scrollIntoView({
+
+    behavior: "smooth"
+
+  });
+
+}
+
+
+/* =========================
+   PLACE ORDER
+========================= */
+
+function placeOrder(event) {
+
+  event.preventDefault();
+
+
+  if(
+    cart.length === 0
+  ) {
+
+    alert(
+      "প্রথমে কার্টে পণ্য যোগ করুন!"
+    );
+
+    return;
+
+  }
+
+
+  let name =
+  document
+  .getElementById(
+    "customerName"
+  )
+  .value;
+
+
+  let phone =
+  document
+  .getElementById(
+    "customerPhone"
+  )
+  .value;
+
+
+  let address =
+  document
+  .getElementById(
+    "customerAddress"
+  )
+  .value;
+
+
+  let payment =
+  document
+  .getElementById(
+    "paymentMethod"
+  )
+  .value;
+
+
+  if(
+    phone.length < 10
+  ) {
+
+    alert(
+      "সঠিক মোবাইল নম্বর লিখুন!"
+    );
+
+    return;
+
+  }
+
+
+  let total = 0;
+
+
+  cart.forEach(
+  function(item) {
+
+    total =
+    total +
+    (
+      item.price *
+      item.quantity
+    );
+
+  });
+
+
+  let orderMessage =
+
+  "অর্ডার সফলভাবে গ্রহণ করা হয়েছে!\\n\\n" +
+
+  "নাম: " +
+  name +
+
+  "\\n" +
+
+  "মোবাইল: " +
+  phone +
+
+  "\\n" +
+
+  "ঠিকানা: " +
+  address +
+
+  "\\n" +
+
+  "পেমেন্ট: " +
+  payment +
+
+  "\\n\\n" +
+
+  "মোট টাকা: ₹" +
+  total +
+
+  "\\n\\n" +
+
+  "প্রসেনজিৎ অনলাইন শপে অর্ডার করার জন্য ধন্যবাদ!";
+
+
+  alert(
+    orderMessage
+  );
+
+
+  cart = [];
+
+
+  updateCart();
+
+
+  document
+  .getElementById(
+    "orderForm"
+  )
+  .reset();
+
+}
+
+
+/* =========================
+   END
+========================= */
+
+</script>
+
+
+</body>
+</html>
